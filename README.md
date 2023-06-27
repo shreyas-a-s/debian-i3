@@ -4,7 +4,7 @@ A Minimal i3WM Install on Debian using an Installer Script
 ## Screenshots
 
 ![i3-login-screen](https://github.com/shreyasastech/debian-i3/assets/137637016/9efaedbc-9519-4667-963a-ba0826c14090)
-<p style="text-align: center;">Login Screen</p>
+<p align="center">Login Screen</p>
 
 ![i3-plain](https://github.com/shreyasastech/debian-i3/assets/137637016/b86f630e-9e6b-4d9f-b5c4-514f2e158bcd)
 <p style="text-align: center;">Plain Install</p>
