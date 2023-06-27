@@ -56,5 +56,9 @@ chmod +x /usr/bin/i3status-title-on-bar # I've hidden the titlebar of windows. I
 # Done
 echo "Installation is now complete. Reboot your system for the changes to take place.
 Remember, upon reboot no wallpaper will be set. Use the app Nitrogen > Preferences to set a wallpaper.
+If you would like to set the one on login screen as the main wallpaper,
+Type this command from a terminal:
+nitrogen --set-zoom-fill /usr/share/backgrounds/garden.jpg --save
+
 Also, there would a file called 'welcome-to-my-i3.md' in the home folder.
 Open it with a text editor of your choice. You'll get a qucik rundown of some important keyboard-mouse shortcuts."
