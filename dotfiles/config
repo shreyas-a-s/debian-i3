@@ -1,0 +1,248 @@
+##################################################################
+##### -> Setting Mod Key, Default Terminal & Default Font <- #####
+##################################################################
+
+# Setting mod key to Super
+set $mod 	Mod4
+set $myterm xfce4-terminal
+font xft: pango:DejaVu Sans Mono 10
+
+
+###############################
+##### -> Window Colors <- #####
+###############################
+
+# class                 border  	backgr. 	text    	indicator 	child_border
+client.focused          #4c7899 	#285577 	#ffffff 	#631919   	#631919
+client.focused_inactive #333333 	#5f676a 	#ffffff 	#484e50   	#5f676a
+client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#222222
+client.urgent           #2f343a 	#900000 	#ffffff 	#900000  	#900000
+client.placeholder      #000000 	#0c0c0c 	#ffffff 	#000000  	#0c0c0c
+
+client.background       #ffffff
+
+
+#################################################
+##### -> Window Customizations (General) <- #####
+#################################################
+
+# Borders
+default_border pixel 1
+hide_edge_borders smart
+
+# If I open a new window, move focus to that
+for_window [class="."] focus
+
+# Window gaps
+# gaps inner 2
+
+
+##########################################################
+##### -> Window Customizations (Floating Windows) <- #####
+##########################################################
+
+# Borders
+default_floating_border pixel 1
+
+# Size constraints
+floating_minimum_size 	580 x 360
+floating_maximum_size 	1000 x 662
+
+# The apps I prefer to open in floating window mode
+for_window 	[instance="pcmanfm"] 		floating enable resize set 810 500
+for_window 	[instance="gpartedbin"] 	floating enable resize set 333 184
+for_window 	[instance="galculator"] 	floating enable resize set 331 343
+for_window 	[instance="pavucontrol"] 	floating enable resize set 280 120
+for_window 	[instance="thunar"] 		floating enable resize set 810 500
+for_window 	[window_type="dialog"] 		floating enable resize set 254 125
+for_window 	[instance="keepassxc"] 		floating enable resize set 800 500
+for_window 	[Window_role="$myterm-*"] 	floating enable resize set 810 500
+for_window 	[instance="audacity"] 		floating enable resize set 850 600
+for_window 	[instance="nitrogen"] 		floating enable resize set 331 343
+
+
+##########################################
+##### -> Workspace Customizations <- #####
+##########################################
+
+# Define names for default workspaces
+set 	$ws1 	"1:Terminal"
+set 	$ws2 	"2:TextEdit"
+set 	$ws3 	"3:Browse"
+set 	$ws4 	"4:Notes"
+set 	$ws5 	"5:Media"
+set 	$ws6 	"6:Misc"
+
+# Automatically putting specific programs on a particular workspace
+assign 	[instance="geany"] 						number "2:TextEdit"
+assign 	[instance="lite-xl"] 					number "2:TextEdit"
+assign 	[class="librewolf-default"] 			number "3:Browse"
+assign 	[title="Mozilla Firefox"] 				number "3:Browse"
+assign 	[instance="brave-browser"] 				number "3:Browse"
+assign 	[instance="joplin"] 					number "4:Notes"
+assign 	[instance="audacity"] 					number "5:Media"
+assign 	[instance="vlc"] 						number "5:Media"
+assign 	[instance="keepassxc"] 					number "6:Misc"
+
+
+####################################################
+##### -> Window Controls (Floating & Tiled) <- #####
+####################################################
+
+# To drag around windows (floating as well as tiled) to their wanted position
+floating_modifier $mod
+
+# To close focused window
+bindsym $mod+Shift+c 		kill
+
+# change focus to another window
+bindsym $mod+Left			focus left
+bindsym $mod+Down			focus down
+bindsym $mod+Up 			focus up
+bindsym $mod+Right 			focus right
+
+# Toggle focus between tiled and floating windows
+bindsym $mod+Tab 			focus mode_toggle
+
+# move focused window (floating as well as tiled)
+bindsym $mod+Shift+Left		move left
+bindsym $mod+Shift+Down		move down
+bindsym $mod+Shift+Up 		move up
+bindsym $mod+Shift+Right 	move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f 				fullscreen toggle
+
+# Toggle tiling / floating mode
+bindsym $mod+space 			floating toggle
+
+# Scratchpad
+bindsym $mod+Prior 			move scratchpad
+bindsym $mod+Next 			scratchpad show
+
+# resize focused window using keyboard
+bindsym $mod+minus 			resize shrink width 5 px or 5 ppt
+bindsym $mod+equal 			resize grow width 5 px or 5 ppt
+bindsym $mod+KP_Subtract 	resize shrink height 5 px or 5 ppt
+bindsym $mod+KP_Add 		resize grow height 5 px or 5 ppt
+
+
+####################################
+##### -> Workspace Controls <- #####
+####################################
+
+# switch to workspace
+bindsym $mod+1 			workspace number $ws1
+bindsym $mod+2 			workspace number $ws2
+bindsym $mod+3 			workspace number $ws3
+bindsym $mod+4 			workspace number $ws4
+bindsym $mod+5 			workspace number $ws5
+bindsym $mod+6 			workspace number $ws6
+
+# move focused container to workspace
+bindsym $mod+Shift+1 	move container to workspace number $ws1; workspace number $ws1
+bindsym $mod+Shift+2 	move container to workspace number $ws2; workspace number $ws2
+bindsym $mod+Shift+3 	move container to workspace number $ws3; workspace number $ws3
+bindsym $mod+Shift+4 	move container to workspace number $ws4; workspace number $ws4
+bindsym $mod+Shift+5 	move container to workspace number $ws5; workspace number $ws5
+bindsym $mod+Shift+6 	move container to workspace number $ws6; workspace number $ws6
+
+# change container layout (tabbed, split)
+bindsym $mod+t 			layout toggle tabbed splith splitv
+
+
+###############################################
+##### -> Volume Control using Keyboard <- #####
+###############################################
+
+# Use pactl to adjust volume in PulseAudio (make sure pulseaudio and pavucontrol are installed).
+bindsym KP_Add 			exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status_with_volume
+bindsym KP_Subtract 	exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status_with_volume_with_volume
+bindsym KP_Enter 		exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status_with_volume
+bindsym KP_Insert 		exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status_with_volume
+
+
+#############################################
+##### -> System Controls & Utilities <- #####
+#############################################
+
+# Start a terminal
+bindsym $mod+Return 	exec $myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar --role="terminal-from-keyboard"
+
+# start program launcher
+bindsym $mod+p 			exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i" --term="$myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar"
+
+# Take a screenshot by pressing Prt Scr Key
+bindsym --release Print exec --no-startup-id import ~/Screenshots/screen.png && timestamp=$(date +"_%d_%m_%y_%H_%M_%S") && exec mv ~/Screenshots/screen.png ~/Screenshots/screen"$timestamp".png
+
+# A small logout script
+set $mode_system System (L) logout, (R) reboot, (S) shutdown
+mode "$mode_system"
+{
+    bindsym l 	exec --no-startup-id i3-msg exit, mode "default"        
+    bindsym r 	exec --no-startup-id sudo reboot, mode "default"
+    bindsym s 	exec --no-startup-id sudo poweroff, mode "default"
+
+  # back to normal: ESC
+    bindsym Escape 	mode "default"
+}
+bindsym $mod+Shift+q 	mode "$mode_system"
+
+
+####################################################
+##### -> Reconfigure i3 (Reload or Restart) <- #####
+####################################################
+
+set $mode_i3reset i3 (C) reload, (R) restart
+mode "$mode_i3reset"
+{
+    bindsym c 	exec --no-startup-id i3-msg reload, mode "default"        
+    bindsym r 	exec --no-startup-id i3-msg restart, mode "default"
+
+  # back to normal: ESC
+    bindsym Escape 	mode "default"
+}
+bindsym $mod+q mode "$mode_i3reset"
+
+####################################################
+##### -> Customizations & Tweaking of i3bar <- #####
+####################################################
+
+bar
+{
+	i3bar_command i3bar --transparency
+	colors
+	{
+#		background			color
+		background 			#000000CC
+		statusline 			#ffffff
+		separator 			#666666
+		
+#		colorclass			border		backgr.		text
+		focused_workspace  	#4c7899 	#285577 	#ffffff
+		active_workspace   	#333333 	#5f676a 	#ffffff
+		inactive_workspace 	#333333 	#222222 	#888888
+		urgent_workspace   	#2f343a 	#900000 	#ffffff
+		binding_mode 		#2F343A 	#EAC802 	#000000
+	}
+	tray_output 			none
+	position 				top
+	workspace_min_width 	95
+	strip_workspace_numbers yes
+	font 					xft: pango:DejaVu Sans Mono 9
+    status_command 			i3status | i3status-title-on-bar --color '#02FFBF'
+}
+
+
+###############################################################
+##### -> Programs or Components that need to Autostart <- #####
+###############################################################
+
+exec_always --no-startup-id lxpolkit
+exec 		--no-startup-id nitrogen --restore; picom --config ~/.config/picom/picom.conf -b
+# exec 		--no-startup-id nm-applet
+# exec 		--no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id ~/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces
+exec 		--no-startup-id st command i3-msg restart
+exec 		--no-startup-id xset dpms 600
+set $refresh_i3status_with_volume killall -SIGUSR1 i3status
