@@ -44,6 +44,7 @@ cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
 cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
 cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor config file
 cp garden.jpg /usr/share/backgrounds/ # my current fav wallpaper
+cp scripts/wall-set.sh ~/ # Script to set nitrogen --restore in i3 config
 chown -R "$username":"$username" /home/"$username" #otherwise you need sudo privileges whenever you want to change some of these files
 
 # i3 tweaks
