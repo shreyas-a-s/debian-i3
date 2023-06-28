@@ -23,7 +23,7 @@ in my distro of choice, debian. Gathering all my stengths, I am starting my work
 
  - Chris Titus [@christitustech](https://github.com/christitustech/) for the inspiration to start shell scripting
  - Derek Taylor [@dwt1](https://gitlab.com/dwt1) for the motivation to join github
- - krokerke [@krokerke](https://github.com/krokerke) for [i3-autoname-workspaces.py](https://github.com/krokerke/dotfiles/blob/master/i3/.config/i3/i3-autoname-workspaces.py), a python script to
+ - krokerke [@krokerke](https://github.com/krokerke) for [i3-autoname-workspaces.py](https://github.com/krokerke/dotfiles/blob/master/i3/.config/i3/i3-autoname-workspaces.py), a python script to add program icons to workspaces in i3bar
  - enkore [@enkore](https://github.com/enkore) for [j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop), simply the better dmenu
  - Ray Holder [@rholder](https://github.com/rholder) for [i3status-title-on-bar](https://github.com/rholder/i3status-title-on-bar), a tilebar replacement or i3 windows
  - Mate Desktop Team [@mate-desktop](https://github.com/mate-desktop) for [Garden.jpg](https://github.com/mate-desktop/mate-backgrounds/blob/master/nature/Garden.jpg), a pleasingly beautiful wallpaper that I used for this build
