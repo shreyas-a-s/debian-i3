@@ -10,9 +10,9 @@ A Minimal i3WM Install on Debian using an Installer Script
 |:--:| 
 | *This install script only* |
 
-| ![i3-customised.png]() | 
+| ![i3-with-customisation.png](https://github.com/shreyasastech/debian-i3/assets/137637016/4a0c79dc-8006-4837-ab6d-dc6956d8f483) | 
 |:--:| 
-| *This install script + My debian customisation script* |
+| *This install script + My [debian customisation script](https://github.com/shreyasastech/debian-customisation)* |
 ## Inspiration
 I've been tinkering with window managers for some time and chose i3 as my preferred one.  
 I've also seen the **debian-titus** repo of [@christitustech](https://github.com/christitustech/) and got an inspiration.  
