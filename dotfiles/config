@@ -3,8 +3,9 @@
 ##################################################################
 
 # Setting mod key to Super
-set $mod 	Mod4
-set $myterm xfce4-terminal
+set $mod 		Mod4
+set $myterm 	xfce4-terminal
+set $myBrowser	any-browser
 font xft: pango:DejaVu Sans Mono 10
 
 
@@ -168,6 +169,9 @@ bindsym KP_Insert 		exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ 
 
 # Start a terminal
 bindsym $mod+Return 	exec $myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar --role="terminal-from-keyboard"
+
+# Launch my browser
+bindsym $mod+b 			exec $myBrowser
 
 # start program launcher
 bindsym $mod+p 			exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i" --term="$myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar"
