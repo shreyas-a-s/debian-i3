@@ -47,7 +47,7 @@ Execute install.sh as sudo from a terminal:
 
 For those who would like a single-line command:
 ```bash
- git clone https://github.com/shreyasastech/debian-i3.git && cd debian-i3/ && sudo bash ./install.sh
+ git clone https://github.com/shreyasastech/debian-i3.git && cd debian-i3/ && sudo ./install.sh
 ```
 
 ## FAQ
