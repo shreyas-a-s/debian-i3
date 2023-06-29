@@ -180,7 +180,7 @@ bindsym $mod+p 			exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -p 'ru
 bindsym --release Print exec --no-startup-id import ~/Screenshots/screen.png && timestamp=$(date +"_%d_%m_%y_%H_%M_%S") && exec mv ~/Screenshots/screen.png ~/Screenshots/screen"$timestamp".png
 
 # A small logout script
-set $mode_system System (L) logout, (R) reboot, (S) shutdown
+set $mode_system Logout
 mode "$mode_system"
 {
     bindsym l 	exec --no-startup-id i3-msg exit, mode "default"        
@@ -197,7 +197,7 @@ bindsym $mod+Shift+q 	mode "$mode_system"
 ##### -> Reconfigure i3 (Reload or Restart) <- #####
 ####################################################
 
-set $mode_i3reset i3 (C) reload, (R) restart
+set $mode_i3reset Reload i3
 mode "$mode_i3reset"
 {
     bindsym c 	exec --no-startup-id i3-msg reload, mode "default"        
@@ -219,15 +219,15 @@ bar
 	{
 #		background			color
 		background 			#000000CC
-		statusline 			#FFFFFF
-		separator 			#666666
+		statusline 			#DAF2E1
+		separator 			#78B48A
 		
 #		colorclass			border		backgr.		text
 		focused_workspace  	#4C9975 	#1D7C3A 	#FFFFFF
 		active_workspace   	#333333 	#5F676A 	#FFFFFF
 		inactive_workspace 	#333333 	#222222 	#888888
-		urgent_workspace   	#2F343a 	#900000 	#FFFFFF
-		binding_mode 		#2F343A 	#EAC802 	#000000
+		urgent_workspace   	#2F343A 	#900000 	#FFFFFF
+		binding_mode 		#1D7C3A 	#D3EFDB 	#114A22
 	}
 	tray_output 			none
 	position 				top
