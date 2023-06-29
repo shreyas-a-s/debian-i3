@@ -219,7 +219,7 @@ bar
 	{
 #		background			color
 		background 			#000000CC
-		statusline 			#DAF2E1
+		statusline 			#E6F5EB
 		separator 			#78B48A
 		
 #		colorclass			border		backgr.		text
@@ -234,7 +234,7 @@ bar
 	workspace_min_width 	85
 	strip_workspace_numbers yes
 	font 					xft: pango:DejaVu Sans Mono 9
-    status_command 			i3status | i3status-title-on-bar --color '#50CB76'
+    status_command 			i3status | i3status-title-on-bar --color '#3CDA6D'
 }
 
 
