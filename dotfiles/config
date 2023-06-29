@@ -174,7 +174,7 @@ bindsym $mod+Return 	exec $myterm --dynamic-title-mode=before --hide-toolbar --h
 bindsym $mod+b 			exec $myBrowser
 
 # start program launcher
-bindsym $mod+p 			exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i" --term="$myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar"
+bindsym $mod+p 			exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -p run:" --term="$myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar"
 
 # Take a screenshot by pressing Prt Scr Key
 bindsym --release Print exec --no-startup-id import ~/Screenshots/screen.png && timestamp=$(date +"_%d_%m_%y_%H_%M_%S") && exec mv ~/Screenshots/screen.png ~/Screenshots/screen"$timestamp".png
