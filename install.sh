@@ -37,7 +37,7 @@ cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor confi
 chown -R "$username":"$username" /home/"$username" #otherwise you need sudo privileges whenever you want to change some of these files
 
 # i3 tweaks
-. ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands in i3 config
+./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
 . ./scripts/j4-i3scripts.sh # Installing j4-dmenu-desktop and dependencies of i3scripts
 curl -o /usr/bin/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
 chmod +x /usr/bin/i3status-title-on-bar # I've hidden the titlebar of windows. Instead I am using i3bar as a titlebar using this script.
