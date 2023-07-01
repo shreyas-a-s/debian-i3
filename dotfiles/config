@@ -208,6 +208,22 @@ mode "$mode_i3reset"
 }
 bindsym $mod+q mode "$mode_i3reset"
 
+
+#####################################################
+##### -> Binding Mode: Manual Vertical Split <- #####
+#####################################################
+
+set $mode_vsplit Split V
+mode "$mode_vsplit"
+{
+	bindsym $mod+Return 	exec $myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar --role="terminal-from-keyboard"
+	
+  # back to normal: ESC
+    bindsym Escape	split h, mode "default"
+}
+bindsym $mod+v split v, mode "$mode_vsplit"
+
+
 ####################################################
 ##### -> Customizations & Tweaking of i3bar <- #####
 ####################################################
