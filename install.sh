@@ -27,7 +27,6 @@ cd "$builddir" || exit
 
 # Creating necessary directories
 echo ""; echo "Making necessary directories..."
-mkdir -p /etc/lightdm/
 mkdir -p /home/"$username"/.config/i3/
 mkdir -p /home/"$username"/.config/i3status/
 mkdir -p /home/"$username"/.config/picom/
@@ -38,8 +37,6 @@ mkdir -p /usr/share/backgrounds/
 echo ""; echo "Copying config files..."
 cp -R dotfiles/i3scripts /home/"$username"/.config/i3/ # python scripts to add program icons to workspaces in i3-bar
 cp welcome-to-my-i3.md /home/"$username"/ # kind-of a user manual for my i3wm setup
-cp dotfiles/lightdm.conf /etc/lightdm/ # lightdm login manager config file
-cp dotfiles/slick-greeter.conf /etc/lightdm/ # slick-greeter config file
 cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
 cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
 cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor config file
