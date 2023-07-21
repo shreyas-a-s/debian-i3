@@ -265,6 +265,5 @@ exec 		--no-startup-id picom --config ~/.config/picom/picom.conf -b
 # exec 		--no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id ~/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces
 exec 		--no-startup-id st command i3-msg restart
-exec 		--no-startup-id xset dpms 600
 exec 		--no-startup-id ~/wall-set.sh
 set $refresh_i3status_with_volume killall -SIGUSR1 i3status
