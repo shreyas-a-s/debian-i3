@@ -183,8 +183,8 @@ bindsym --release Print exec --no-startup-id import ~/Screenshots/screen.png && 
 set $mode_system Logout
 mode "$mode_system"
 {
-    bindsym l 	exec --no-startup-id dm-tool lock, mode "default"        
-    bindsym r 	exec --no-startup-id sudo reboot, mode "default"
+    bindsym l 	exec --no-startup-id dm-tool lock,  mode "default"        
+    bindsym r 	exec --no-startup-id sudo reboot,   mode "default"
     bindsym s 	exec --no-startup-id sudo poweroff, mode "default"
 
   # back to normal: ESC
