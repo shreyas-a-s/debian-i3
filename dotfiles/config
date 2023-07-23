@@ -193,6 +193,8 @@ mode "$mode_system"
 }
 bindsym $mod+Shift+q 	mode "$mode_system"
 
+bindsym $mod+k 			exec --no-startup-id bash ~/.config/dkill.sh
+
 
 ####################################################
 ##### -> Reconfigure i3 (Reload or Restart) <- #####
