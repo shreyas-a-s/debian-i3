@@ -77,6 +77,7 @@ set 	$ws6 	"6:Misc"
 # Automatically putting specific programs on a particular workspace
 assign 	[instance="geany"] 						number "2:TextEdit"
 assign 	[instance="lite-xl"] 					number "2:TextEdit"
+assign 	[instance="vscodium"] 					number "2:TextEdit"
 assign 	[class="librewolf-default"] 			number "3:Browse"
 assign 	[title="Mozilla Firefox"] 				number "3:Browse"
 assign 	[instance="brave-browser"] 				number "3:Browse"
