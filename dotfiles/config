@@ -218,6 +218,7 @@ set $mode_vsplit Split V
 mode "$mode_vsplit"
 {
 	bindsym $mod+Return 	exec $myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar --role="terminal-from-keyboard"
+	bindsym $mod+p 	        exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -p 'run:' -sb '#1D7C3A' -sf '#FFFFFF'" --term="$myterm --dynamic-title-mode=before --hide-toolbar --hide-menubar --hide-scrollbar"
 	
   # back to normal: ESC
     bindsym Escape	split h, mode "default"
@@ -259,6 +260,7 @@ bar
 ##### -> Programs or Components that need to Autostart <- #####
 ###############################################################
 
+exec_always --no-startup-id light-locker
 exec_always --no-startup-id lxpolkit
 exec 		--no-startup-id nitrogen --restore
 exec 		--no-startup-id picom --config ~/.config/picom/picom.conf -b
