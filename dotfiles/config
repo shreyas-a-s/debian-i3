@@ -260,12 +260,11 @@ bar
 ##### -> Programs or Components that need to Autostart <- #####
 ###############################################################
 
-exec_always --no-startup-id light-locker
-exec_always --no-startup-id lxpolkit
 exec 		--no-startup-id nitrogen --restore
 exec 		--no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always --no-startup-id light-locker
+exec_always --no-startup-id lxpolkit
 # exec 		--no-startup-id nm-applet
-# exec 		--no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id ~/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces
 exec 		--no-startup-id st command i3-msg restart
 exec 		--no-startup-id ~/wall-set.sh
