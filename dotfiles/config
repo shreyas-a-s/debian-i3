@@ -29,7 +29,7 @@ client.background       #FFFFFF
 
 # Borders
 default_border pixel 1
-#hide_edge_borders smart
+hide_edge_borders smart
 
 # If I open a new window, move focus to that
 for_window [class="."] focus
