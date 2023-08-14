@@ -19,7 +19,6 @@ client.focused_inactive #333333 	#5F676A 	#FFFFFF 	#484E50   	#5f676A
 client.unfocused        #333333 	#222222 	#888888 	#292D2E  	#222222
 client.urgent           #2F343A 	#900000 	#FFFFFF 	#900000  	#900000
 client.placeholder      #000000 	#0C0C0C 	#FFFFFF 	#000000  	#0C0C0C
-
 client.background       #FFFFFF
 
 
@@ -67,24 +66,32 @@ for_window 	[instance="nitrogen"] 		floating enable resize set 331 343
 ##########################################
 
 # Define names for default workspaces
-set 	$ws1 	"1:Terminal"
-set 	$ws2 	"2:TextEdit"
-set 	$ws3 	"3:Browse"
-set 	$ws4 	"4:Notes"
-set 	$ws5 	"5:Media"
-set 	$ws6 	"6:Misc"
+#set 	$ws1 	"1:Terminal"
+#set 	$ws2 	"2:TextEdit"
+#set 	$ws3 	"3:Browse"
+#set 	$ws4 	"4:Notes"
+# set 	$ws5 	"5:Media"
+# set 	$ws6 	"6:Misc"
+
+# Define default workspaces without names
+set 	$ws1 	"1"
+set 	$ws2 	"2"
+set 	$ws3 	"3"
+set 	$ws4 	"4"
+set 	$ws5 	"5"
+set 	$ws6 	"6"
 
 # Automatically putting specific programs on a particular workspace
-assign 	[instance="geany"] 						number "2:TextEdit"
-assign 	[instance="lite-xl"] 					number "2:TextEdit"
-assign 	[instance="vscodium"] 					number "2:TextEdit"
-assign 	[class="librewolf-default"] 			number "3:Browse"
-assign 	[title="Mozilla Firefox"] 				number "3:Browse"
-assign 	[instance="brave-browser"] 				number "3:Browse"
-assign 	[instance="joplin"] 					number "4:Notes"
-assign 	[instance="audacity"] 					number "5:Media"
-assign 	[instance="vlc"] 						number "5:Media"
-assign 	[instance="keepassxc"] 					number "6:Misc"
+#assign 	[instance="geany"] 						number "2"
+#assign 	[instance="lite-xl"] 					number "2"
+#assign 	[instance="vscodium"] 					number "2"
+#assign 	[class="librewolf-default"] 			number "3"
+#assign 	[title="Mozilla Firefox"] 				number "3"
+#assign 	[instance="brave-browser"] 				number "3"
+#assign 	[instance="joplin"] 					number "4"
+#assign 	[instance="audacity"] 					number "5"
+#assign 	[instance="vlc"] 						number "5"
+#assign 	[instance="keepassxc"] 					number "6"
 
 
 ####################################################
@@ -252,10 +259,10 @@ bar
 	}
 	tray_output 			none
 	position 				top
-	workspace_min_width 	85
+	#workspace_min_width 	85
 	strip_workspace_numbers yes
 	font 					xft: pango:DejaVu Sans Mono 9
-    status_command 			i3status | i3status-title-on-bar --color '#3CDA6D'
+    status_command 			i3status
 }
 
 
@@ -268,7 +275,6 @@ exec 		--no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id light-locker
 exec_always --no-startup-id lxpolkit
 # exec 		--no-startup-id nm-applet
-exec_always --no-startup-id ~/.config/i3/i3scripts/autoname_workspaces.py --norenumber_workspaces
 exec 		--no-startup-id st command i3-msg restart
 exec 		--no-startup-id ~/wall-set.sh
 exec        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ 30%

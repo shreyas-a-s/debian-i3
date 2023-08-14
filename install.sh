@@ -31,7 +31,6 @@ mkdir -p /usr/share/backgrounds/
 
 # Copy config files
 echo ""; echo "Copying config files..."
-cp -R dotfiles/i3scripts /home/"$username"/.config/i3/ # python scripts to add program icons to workspaces in i3-bar
 cp welcome-to-my-i3.md /home/"$username"/ # kind-of a user manual for my i3wm setup
 cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
 cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
@@ -41,8 +40,6 @@ chown -R "$username":"$username" /home/"$username" #otherwise you need sudo priv
 # i3 tweaks
 ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
 . ./scripts/j4-i3scripts.sh # Installing j4-dmenu-desktop and dependencies of i3scripts
-curl -o /usr/bin/i3status-title-on-bar -L "https://github.com/rholder/i3status-title-on-bar/releases/latest/download/i3status-title-on-bar-linux_amd64"
-chmod +x /usr/bin/i3status-title-on-bar # I've hidden the titlebar of windows. Instead I am using i3bar as a titlebar using this script.
 
 # Done
 echo "Installation is now complete. Reboot your system for the changes to take place.
