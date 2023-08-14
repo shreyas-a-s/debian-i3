@@ -32,6 +32,7 @@ mkdir -p /usr/share/backgrounds/
 # Copy config files
 echo ""; echo "Copying config files..."
 cp welcome-to-my-i3.md /home/"$username"/ # kind-of a user manual for my i3wm setup
+cp dotfiles/autotiling /bin/ # making i3 a bit of a dynamic tiler
 cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
 cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
 cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor config file
