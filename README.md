@@ -40,14 +40,14 @@ in my distro of choice, debian. Gathering all my stengths, I am starting my work
 Execute install.sh as sudo from a terminal:
 
 ```bash
- git clone https://github.com/shreyasastech/debian-i3.git
+ git clone https://github.com/shreyas-a-s/debian-i3.git
  cd debian-i3/
  sudo /.install.sh
 ```
 
 For those who would like a single-line command:
 ```bash
- git clone https://github.com/shreyasastech/debian-i3.git && cd debian-i3/ && sudo ./install.sh
+ git clone https://github.com/shreyas-a-s/debian-i3.git && cd debian-i3/ && sudo ./install.sh
 ```
 
 ## FAQ
