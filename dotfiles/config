@@ -275,7 +275,6 @@ exec 		--no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id light-locker
 exec_always --no-startup-id lxpolkit
 # exec 		--no-startup-id nm-applet
-exec 		--no-startup-id st command i3-msg restart
 exec 		--no-startup-id ~/wall-set.sh
 exec        --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ 30%
 exec_always --no-startup-id autotiling
