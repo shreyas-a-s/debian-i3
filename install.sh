@@ -14,7 +14,7 @@ debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*}
 # Updating system & installing programs
 echo ""; echo "Doing a system update & Installing the required programs..."
 apt update && apt upgrade -y
-apt install x11-utils x11-xserver-utils xserver-xorg-video-intel xserver-xorg-input-libinput -y
+apt install xorg -y
 apt install i3 i3status lightdm slick-greeter xfce4-terminal dmenu picom -y
 apt install fonts-powerline curl imagemagick pulseaudio pavucontrol wget nitrogen python3-pip fonts-font-awesome -y
 
