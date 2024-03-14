@@ -8,7 +8,7 @@ fi
 
 # Get username, working directory, i3 vsersion, distro name & debian version
 username=$(id -u -n 1000)
-builddir=$(pwd)
+builddir=$(dirname -- "$( readlink -f -- "$0"; )")
 debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*}
 
 # Updating system & installing programs
