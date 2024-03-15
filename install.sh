@@ -39,7 +39,7 @@ cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor confi
 
 # i3 tweaks
 ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
-./scripts/j4-i3scripts.sh # Installing j4-dmenu-desktop and dependencies of i3scripts
+./scripts/j4-dmenu-desktop.sh # Installing j4-dmenu-desktop (a better application menu)
 
 # Done
 echo "Installation is now complete. Reboot your system for the changes to take place.
