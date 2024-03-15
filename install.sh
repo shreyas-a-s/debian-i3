@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Check if script is run as root
-if [[ $EUID -ne 0 ]]; then
-  echo "You must BE a root user to run this script, please run sudo ./install.sh" 2>&1
+if [ "$(id -u)" -eq 0 ]; then
+  printf "\nYou must NOT be a root user when running this script, please run ./install.sh as normal user\n\n" 2>&1
   exit 1
 fi
 
@@ -13,30 +13,29 @@ debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*} &7
 
 # Updating system & installing programs
 echo ""; echo "Doing a system update & Installing the required programs..."
-apt update && apt upgrade -y
-apt install xorg -y
-apt install i3 i3status lightdm slick-greeter xfce4-terminal dmenu picom -y
-apt install fonts-powerline curl imagemagick pulseaudio pavucontrol wget nitrogen python3-pip fonts-font-awesome -y
+sudo apt update && sudo apt upgrade -y
+sudo apt install xorg -y
+sudo apt install i3 i3status lightdm slick-greeter xfce4-terminal dmenu picom -y
+sudo apt install fonts-powerline curl imagemagick pulseaudio pavucontrol wget nitrogen python3-pip fonts-font-awesome -y
 
 # Change the current working directory
 cd "$builddir" || exit
 
 # Creating necessary directories
 echo ""; echo "Making necessary directories..."
-mkdir -p /home/"$username"/.config/i3/
-mkdir -p /home/"$username"/.config/i3status/
-mkdir -p /home/"$username"/.config/picom/
-mkdir -p /home/"$username"/Screenshots/
-mkdir -p /usr/share/backgrounds/
+mkdir -p ~/.config/i3/
+mkdir -p ~/.config/i3status/
+mkdir -p ~/.config/picom/
+mkdir -p ~/Screenshots/
+sudo mkdir -p /usr/share/backgrounds
 
 # Copy config files
 echo ""; echo "Copying config files..."
-cp welcome-to-my-i3.md /home/"$username"/ # kind-of a user manual for my i3wm setup
-cp dotfiles/autotiling /bin/ # making i3 a bit of a dynamic tiler
-cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
-cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
-cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor config file
-chown -R "$username":"$username" /home/"$username" #otherwise you need sudo privileges whenever you want to change some of these files
+cp welcome-to-my-i3.md ~ # kind-of a user manual for my i3wm setup
+sudo cp dotfiles/autotiling /usr/local/bin/ # making i3 a bit of a dynamic tiler
+cp dotfiles/config ~/.config/i3/ # i3wm customizations
+cp dotfiles/i3status ~/.config/i3status/config # i3 bottom bar customizations
+cp dotfiles/picom.conf ~/.config/picom/ # Picom Compositor config file
 
 # i3 tweaks
 ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
