@@ -9,7 +9,6 @@ fi
 # Get username, working directory, i3 vsersion, distro name & debian version
 username=$(id -u -n 1000) && export username
 builddir=$(dirname -- "$( readlink -f -- "$0"; )")
-debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*} &7 export debianversion
 
 # Updating system & installing programs
 echo ""; echo "Doing a system update & Installing the required programs..."
