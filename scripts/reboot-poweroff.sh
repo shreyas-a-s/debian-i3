@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo ""; echo "Configuring sudo reboot & sudo poweroff commands to work without having to type password..."
 echo "

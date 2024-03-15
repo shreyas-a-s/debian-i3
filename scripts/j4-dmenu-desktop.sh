@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DEBIAN_VERSION=$(cat /etc/debian_version)
 DEBIAN_MAJOR_VERSION=${DEBIAN_VERSION%.*}
