@@ -49,21 +49,3 @@ For those who would like a single-line command:
 ```bash
  git clone https://github.com/shreyas-a-s/debian-i3.git && cd debian-i3/ && sudo ./install.sh
 ```
-
-## FAQ
-
-#### Why a window is opened and closed for a split second after I've logged in to i3 ?
-
-Due a bug in the autoname-workspaces.py script that is used to display window titles in i3bar,
-after login the i3status won't work unless we open an app and restart i3.
-Hence I've wrote a bash script that automatically opens a terminal ([stterm](https://github.com/katox/stterm) in this build) after the login
-and executes a command that restarts i3 thereby eliminating the issue. That st window is what you are seeing.
-
-If you don't like that behaviour and are either willing to restart i3 manually after login or can live without title-on-i3bar feature
-you can disable it by executing this command:
-```
-sed -i "/status_command/ c\    status_command\t\t\ti3status" ~/.config/i3/config && sed -i "/st command/ c\\" ~/.config/i3/config
-```
-
-Also if you are able to mitigate that issue by some other method, share it though an issue or pull request.
-I will be more than happy to learn that and include in my script.
