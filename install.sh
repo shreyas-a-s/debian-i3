@@ -7,9 +7,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Get username, working directory, i3 vsersion, distro name & debian version
-username=$(id -u -n 1000)
+username=$(id -u -n 1000) && export username
 builddir=$(dirname -- "$( readlink -f -- "$0"; )")
-debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*}
+debianversion=$(cat /etc/debian_version) && debianversion=${debianversion%.*} &7 export debianversion
 
 # Updating system & installing programs
 echo ""; echo "Doing a system update & Installing the required programs..."
@@ -39,7 +39,7 @@ cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor confi
 
 # i3 tweaks
 ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
-. ./scripts/j4-i3scripts.sh # Installing j4-dmenu-desktop and dependencies of i3scripts
+./scripts/j4-i3scripts.sh # Installing j4-dmenu-desktop and dependencies of i3scripts
 
 # Done
 echo "Installation is now complete. Reboot your system for the changes to take place.
