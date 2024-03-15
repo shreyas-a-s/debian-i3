@@ -36,6 +36,7 @@ cp dotfiles/autotiling /bin/ # making i3 a bit of a dynamic tiler
 cp dotfiles/config /home/"$username"/.config/i3/ # i3wm customizations
 cp dotfiles/i3status /home/"$username"/.config/i3status/config # i3 bottom bar customizations
 cp dotfiles/picom.conf /home/"$username"/.config/picom/ # Picom Compositor config file
+chown -R "$username":"$username" /home/"$username" #otherwise you need sudo privileges whenever you want to change some of these files
 
 # i3 tweaks
 ./scripts/reboot-poweroff.sh # For configuring reboot-poweroff commands to work without password
